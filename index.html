@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <h1>News of Vietnam</h1>
+                <span id="numOfStories">Number of Stories Displayed: </span>
+            </div>
+        </div>
+    </header>
+    <section>
+    <div class="container">
+        <div id="newsArea" >
+            <div id="news" class="row">
+                <div id="imgArea" class="col">
+                    <img src="https://ca-times.brightspotcdn.com/dims4/default/70ec3d8/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5e%2F4b%2F1aeeb2d57d763d89c9da42b0e48b%2Fla-pol-sac-california-gun-control-gavin-newsom-001" width="200" />
+                </div>
+                <div id="contentsArea" class="col">
+                    <div id="title">Title of Article</div>
+                    <div id="source">LA Times</div>
+                    <div id="readMore">Read more...</div>
+                    <div id="publishedAt">Yesterday</div>
+                </div>
+            </div>
+        </div>
+        <div class="justify-content-center">
+            <button id="moreStories" onclick="loadMoreNews()">Load more stories</button>
+        </div>
+    </div>
+    </section>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+</body>
+</html> 
