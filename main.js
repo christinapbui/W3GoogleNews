@@ -1,9 +1,10 @@
 let newsList = []
 let page = 1
 let newsSources = []
+let pageSize=20;
 const apiKey = "d46ade4a93754907b28028ce14102343" // used const so it won't be changed
 const loadNews = async() => { // using async to call data, will take long time // will call the news
-   let url = `https://newsapi.org/v2/everything?q=vietnam&pagecount=${page}&apiKey=${apiKey}` // we need to call URL here 
+   let url = `https://newsapi.org/v2/everything?q=vietnam&page=${page}&apiKey=${apiKey}` // we need to call URL here 
    let data = await fetch(url) // await until we get the data, 
    // async and await are a set; will get error if use one & not the other
    let result = await data.json(); // if "await" isn't used, data isn't there yet - cannot recognize json
@@ -37,11 +38,12 @@ loadNews();
 
 // load more stories
 let loadMoreNews = async() => { 
-    let url = `https://newsapi.org/v2/everything?q=vietnam&pagecount=${page}&apiKey=${apiKey}` // we need to call URL here 
+    pageSize+=20;
+    let url = `https://newsapi.org/v2/everything?q=vietnam&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}` // we need to call URL here 
     let data = await fetch(url)
+    console.log(url)
     let result = await data.json(); 
-    let dataList = result.articles; 
-    newsList = newsList.concat(dataList) 
+    newsList = result.articles; 
     render(newsList)
     document.getElementById("numOfStories").innerHTML = `Number of Stories Displayed: ${newsList.length}`
 }
